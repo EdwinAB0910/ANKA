@@ -1,0 +1,441 @@
+:root {
+    --rose: #bc7583;
+    --dark: #2c2c2c;
+    --light-bg: #fdf8f7;
+    --transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--dark);
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+
+    background-image:
+        linear-gradient(rgba(253, 248, 247, 0.85), rgba(253, 248, 247, 0.85)),
+        url("https://img1.wallspic.com/previews/7/9/5/0/10597/10597-diseno_floral-petalo-menique-familia_de_las_rosas-acuarela-x750.jpg");
+
+    background-size: 400px;
+
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+.nav-rosa {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Ocultar el checkbox real */
+.menu-toggle {
+    display: none;
+}
+
+/* Estilo del botón de Rosa */
+.rose-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.rose-icon {
+    font-size: 2.5rem;
+    /* Tamaño de la rosa */
+    transition: var(--transition);
+    filter: drop-shadow(0 5px 15px rgba(188, 117, 131, 0.3));
+    margin-right: 120px;
+}
+
+.rose-button:hover .rose-icon {
+    transform: scale(1.2) rotate(15deg);
+}
+
+.nav-links {
+    list-style: none;
+    background: linear-gradient(rgba(217, 169, 169, 0.896), rgba(232, 192, 192, 0.852)), rgba(172, 127, 127, 0.918);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    display: flex;
+    gap: 30px;
+    margin-left: 50px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+
+    /* Animación vertical */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    padding: 0 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgb(131, 123, 123);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--rose);
+}
+
+.menu-toggle:checked~.nav-links {
+    max-height: 100px;
+    opacity: 1;
+    padding: 15px 35px;
+    margin-top: 15px;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.menu-toggle:checked~.rose-button .rose-icon {
+    transform: scale(0.9) rotate(90deg);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
+    border-radius: 0;
+}
+
+/* --- ANIMACIONES DE ENTRADA --- */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* --- TEXTO --- */
+.text-content {
+    flex: 1;
+    animation: slideUp 1s ease-out;
+}
+
+.tag {
+    color: var(--rose);
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.brand-name {
+    display: inline-block;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--rose);
+}
+
+.brand-name:hover {
+    transform: scale(1.4);
+    color: #a35d6a;
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 4.5vw, 4rem);
+    line-height: 1.1;
+    margin: 10px 0;
+}
+
+.italic-effect {
+    font-style: italic;
+    color: var(--rose);
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.title:hover .italic-effect {
+    transform: skewX(-10deg) scale(1.05);
+}
+
+.desc {
+    color: #666;
+    max-width: 400px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* --- BOTONES --- */
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.btn-fill,
+.btn-outline {
+    padding: 18px 30px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.btn-fill {
+    background: var(--rose);
+    color: white;
+}
+
+.btn-fill:hover {
+    background: #a35d6a;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(188, 117, 131, 0.2);
+}
+
+.btn-fill .arrow {
+    display: inline-block;
+    transition: var(--transition);
+}
+
+.btn-fill:hover .arrow {
+    transform: translateX(8px);
+}
+
+.btn-outline {
+    border: 1px solid #ddd;
+    color: var(--dark);
+}
+
+.btn-outline:hover {
+    background: white;
+    border-color: var(--rose);
+}
+
+.redes {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+    animation: slideUp 1.2s ease-out;
+}
+
+.redes a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.redes img {
+    width: 24px;
+    height: 24px;
+    transition: var(--transition);
+    filter: grayscale(20%);
+}
+
+.redes a:hover {
+    transform: translateY(-5px);
+}
+
+.redes a:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+/* --- IMÁGENES --- */
+.image-content {
+    flex: 1.2;
+    position: relative;
+    animation: scaleIn 1.2s ease-out;
+}
+
+.main-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    margin-left: auto;
+}
+
+.img-hero {
+    width: 100%;
+    height: 75vh;
+    object-fit: cover;
+    filter: grayscale(20%);
+    transition: var(--transition);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.main-wrapper:hover .img-hero {
+    filter: grayscale(0%);
+    transform: scale(1.02);
+}
+
+.badge {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: var(--rose);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 10px;
+}
+
+.badge strong {
+    display: block;
+    font-size: 16px;
+}
+
+/* --- CARD FLOTANTE --- */
+.floating-card {
+    position: absolute;
+    bottom: 20px;
+    left: -50px;
+    background: white;
+    width: 240px;
+    padding: 10px;
+    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.floating-card:hover {
+    transform: translate(10px, -10px);
+}
+
+.card-img-container {
+    overflow: hidden;
+    height: 180px;
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+
+.floating-card:hover img {
+    transform: scale(1.15);
+}
+
+.card-text {
+    padding: 15px 5px;
+}
+
+.card-text span {
+    font-size: 10px;
+    color: var(--rose);
+    font-weight: 600;
+}
+
+.card-text p {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+/* --- MÉTRICAS --- */
+.metrics {
+    display: flex;
+    gap: 40px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.metric-item strong {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+}
+
+.metric-item p {
+    font-size: 10px;
+    color: #999;
+    letter-spacing: 1px;
+}
+
+.whatsapp-carrusel a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #e2e6ba, #d4b0a3, #e2e6ba);
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.whatsapp-carrusel img {
+    width: 30px;
+    height: 30px;
+}
+
+.whatsapp-carrusel a:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-wrapper {
+        margin: 50px auto;
+    }
+
+    .floating-card {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .desc {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .metrics {
+        justify-content: center;
+    }
+}
