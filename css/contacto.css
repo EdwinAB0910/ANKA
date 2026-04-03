@@ -11,8 +11,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 15px 40px;
-    background: black;
-    border-bottom: 4px solid #626462;
+    background: rgb(120, 120, 117);
+    border-bottom: 4px solid #c48aad;
 }
 
 .encabezado h1 {
@@ -146,10 +146,10 @@ label[for="modoOscuroToggle"] {
 }
 
 .footer {
-    background: black;
+    background: rgb(120, 120, 117);
     color: white;
     padding: 40px 60px;
-    border-top: 4px solid #626462;
+    border-top: 4px solid #c48aad;
 }
 
 /* contenedor */
