@@ -52,6 +52,10 @@
     background-clip: text;
 }
 
+.nav a:hover {
+    transform: scale(1.2);
+}
+
 /* ocultar checkbox */
 #modoOscuroToggle {
     display: none;
