@@ -61,25 +61,11 @@
     display: none;
 }
 
-.whatsapp-carrusel a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #e2e6ba, #d4b0a3, #e2e6ba);
-    border-radius: 50%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: 0.3s;
-}
-
-.whatsapp-carrusel img {
-    width: 30px;
-    height: 30px;
-}
-
-.whatsapp-carrusel a:hover {
-    transform: scale(1.1);
+/* modo claro */
+.pagina {
+    background: rgb(226, 225, 225);
+    color: black;
+    min-height: 100vh;
 }
 
 /* modo oscuro */
@@ -99,6 +85,27 @@ label[for="modoOscuroToggle"] {
 #modoOscuroToggle:checked~* {
     background: #121212;
     color: white;
+}
+
+.whatsapp-carrusel a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #e2e6ba, #d4b0a3, #e2e6ba);
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.whatsapp-carrusel img {
+    width: 30px;
+    height: 30px;
+}
+
+.whatsapp-carrusel a:hover {
+    transform: scale(1.1);
 }
 
 .seccion-catalogo {
@@ -333,26 +340,37 @@ main {
 /* CELULARES */
 @media (max-width:768px) {
 
+    /* HEADER */
     .encabezado {
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        justify-content: center; /* Cambiado para alinear todo al centro */
+        gap: 15px;               /* Reduce el espacio exagerado entre elementos */
         padding: 20px 10px;
     }
 
+    /* NAV RESPONSIVO - Esto centrará los enlaces del menú */
     .nav {
+        display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px !important;
+        justify-content: center; /* Asegura que los enlaces apunten al centro */
+        gap: 15px;
         width: 100%;
-        padding-left: 30px;
     }
 
     .nav a {
-        gap: 25px;
-        font-size: 14px !important; 
+        font-size: 14px;
         white-space: nowrap;
+    }
+
+    .logotipo h1 {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .nav::-webkit-scrollbar {
+        display: none;
     }
 
     /* FOOTER */
@@ -397,13 +415,14 @@ main {
     .nav {
         display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
+        flex-wrap: wrap;      
+        justify-content: center;
         gap: 12px;
+        width: 100%;
     }
 
     .nav a {
-        font-size: 13px;
+        font-size: 16px;
     }
 
     .nav a:hover {

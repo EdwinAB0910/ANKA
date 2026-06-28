@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* HEADER */
+.encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: rgb(120, 120, 117);
+    border-bottom: 4px solid #c48aad;
+}
+
+.encabezado h1 {
+    background: linear-gradient(90deg, rgb(246, 221, 215), #e7bcb8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* LOGO */
+.logotipo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: -10px;
+}
+
+.logotipo h1 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* NAV */
+.nav {
+    display: flex;
+    gap: 25px;
+}
+
+.nav a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+    background: linear-gradient(90deg, rgb(246, 221, 215), #e7bcb8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav a:hover {
+    transform: scale(1.2);
+}
+
+/* ocultar checkbox */
+#modoOscuroToggle {
+    display: none;
+}
+
+/* modo claro */
+.pagina {
+    background: rgb(226, 225, 225);
+    color: black;
+    min-height: 100vh;
+}
+
+/* modo oscuro */
+#modoOscuroToggle:checked~.pagina {
+    background: #121212;
+    color: white;
+}
+
+#modoOscuroToggle:checked ~ .pagina .curso-card {
+    background: #1e1e1e;
+    color: white;   
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
+}
+
+label[for="modoOscuroToggle"] {
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 15px;
+    margin-bottom: -10px;
+}
+
+.whatsapp-carrusel a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #e2e6ba, #d4b0a3, #e2e6ba);
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.whatsapp-carrusel img {
+    width: 30px;
+    height: 30px;
+}
+
+.whatsapp-carrusel a:hover {
+    transform: scale(1.1);
+}
+
+/* ocultar checkbox */
+#toggleMenu {
+    display: none;
+}
+
+/* MOSTRAR al hacer click */
+#toggleMenu:checked+.btn-menu+.menu-opciones {
+    display: block;
+}
+
+/* ================= SECCIÓN CURSOS ================= */
+.seccion-cursos {
+    padding: 60px 20px;
+}
+
+/* ================= HERO ================= */
+.hero-cursos {
+    position: relative;
+    padding: 180px 20px; 
+    text-align: center;
+    color: rgb(251, 216, 216);
+    border-radius: 12px;
+    margin-bottom: 40px;
+    overflow: hidden; 
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.hero-cursos-texto {
+    position: relative;
+    z-index: 3;
+}
+
+.hero-cursos h1 {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
+}
+
+.hero-cursos p {
+    font-size: 1.2rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ================= CARDS ================= */
+.cursos-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Un poco más de separación entre tarjetas grandes */
+    flex-wrap: wrap;
+}
+
+.curso-card {
+    background: white;
+    width: 310px; /* Tarjetas más grandes (antes 260px) */
+    padding-bottom: 25px; 
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Alinea los elementos verticalmente */
+    align-items: center;
+}
+
+.curso-img {
+    width: 100%;
+    height: 190px; /* Imagen un poco más alta para que luzca mejor */
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* Espaciado interno para textos */
+.curso-card h3, 
+.curso-card p {
+    padding: 0 20px;
+    margin-bottom: 15px;
+}
+
+.curso-card i {
+    font-size: 2rem;
+    color: #e91e63;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.curso-card:hover {
+    transform: translateY(-8px);
+}
+
+/* NUEVO: Estilos para el Botón de Contacto */
+.btn-tarjeta {
+    display: inline-block;
+    background: #c48aad; /* Combina con el borde de tu encabezado */
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: auto; /* Empuja el botón siempre al fondo de la tarjeta */
+    margin-bottom: 5px;
+    transition: 0.3s;
+}
+
+.btn-tarjeta:hover {
+    background: #a36b8c;
+    transform: scale(1.05);
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    background: rgb(120, 120, 117);
+    color: white;
+    padding: 40px 20px;
+    border-top: 4px solid #c48aad;
+    margin-top: auto;
+}
+
+.footer-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.redes {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.redes a {
+    display: flex;
+    padding: 8px;
+    transition: 0.3s;
+}
+
+.redes img {
+    width: 22px;
+}
+
+.redes a:hover {
+    transform: translateY(-5px) scale(1.1);
+}
+
+.copyright {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+/* ================= WHATSAPP ================= */
+.whatsapp-carrusel {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.whatsapp-carrusel a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #e2e6ba, #d4b0a3);
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.whatsapp-carrusel img {
+    width: 30px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* TABLET */
+@media (max-width: 992px) {
+
+    .encabezado {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav {
+        justify-content: center;
+    }
+
+    .curso-card {
+        width: 45%;
+    }
+
+    .hero-cursos h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* CELULAR */
+@media (max-width: 600px) {
+
+    /* HEADER */
+    .encabezado {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 10px;
+    }
+
+    .nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .nav a {
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .curso-card {
+        width: 100%;
+    }
+
+    .hero-cursos {
+        padding: 70px 15px;
+    }
+
+    .hero-cursos h1 {
+        font-size: 1.5rem;
+    }
+}

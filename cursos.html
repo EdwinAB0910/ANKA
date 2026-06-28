@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANKA - Cursos</title>
+
+    <link rel="icon" href="img/logoanka.png" sizes="256x256" type="image/png">
+
+    <link rel="stylesheet" href="css/cursos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <input type="checkbox" id="modoOscuroToggle">
+
+    <div class="pagina">
+
+        <!-- HEADER -->
+        <header class="encabezado">
+            <div class="logotipo">
+                <img src="img/logoanka.png" alt="Logotipo" width="80" />
+                <h1>ANKA</h1>
+            </div>
+
+            <nav class="nav">
+                <a href="index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="catalogo.html">Catálogo</a>
+                <a class="activo" href="cursos.html">Cursos</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="ubicacion.html">Ubicación</a>
+            </nav>
+
+            <label for="modoOscuroToggle">🌙 / ☀️</label>
+        </header>
+
+        <!-- CONTENIDO -->
+        <main class="seccion-cursos">
+
+            <section class="hero-cursos">
+                <video autoplay loop muted playsinline class="hero-video">
+                    <source src="img/Video cursos.mp4" type="video/mp4">
+                </video>
+
+                <div class="hero-overlay"></div>
+
+                <div class="hero-cursos-texto">
+                    <h1>Aprende el arte de la decoración con ANKA</h1>
+                    <p>Formación en diseño floral, eventos y detalles creativos.</p>
+                </div>
+            </section>
+
+            <section class="cursos-info">
+
+                <!-- Tarjeta 1 -->
+                <div class="curso-card">
+                    <img src="img/Arreglos florales cursos.jpg" alt="Curso de Arreglos Florales" class="curso-img">
+                    <i class="fas fa-spa"></i>
+                    <h3>Arreglos Florales</h3>
+                    <p>Técnicas profesionales para crear diseños únicos.</p>
+                    <a href="contacto.html" class="btn-tarjeta">Más Información</a>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="curso-card">
+                    <img src="img/Detalles creativos.jpg" alt="Curso de Detalles Creativos" class="curso-img">
+                    <i class="fas fa-gift"></i>
+                    <h3>Detalles Creativos</h3>
+                    <p>Aprende a diseñar regalos personalizados.</p>
+                    <a href="contacto.html" class="btn-tarjeta">Más Información</a>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="curso-card">
+                    <img src="img/Eventos.jpg" alt="Curso de Eventos" class="curso-img">
+                    <i class="fas fa-champagne-glasses"></i>
+                    <h3>Eventos</h3>
+                    <p>Decoración de bodas y celebraciones.</p>
+                    <a href="contacto.html" class="btn-tarjeta">Más Información</a>
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-contenedor">
+
+                <div class="footer-info">
+                    <p class="copyright">ANKA © 2026</p>
+                </div>
+
+                <div class="footer-redes">
+                    <div class="redes">
+                        <a href="#"><img src="https://www.svgrepo.com/show/475647/facebook-color.svg"></a>
+                        <a href="#"><img src="https://www.svgrepo.com/show/394280/messenger.svg"></a>
+                        <a href="#"><img src="https://www.svgrepo.com/show/475658/instagram-color.svg"></a>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+
+        <!-- WhatsApp -->
+        <div class="whatsapp-carrusel" style="margin-bottom: -35px; position: fixed;
+    bottom: 60px;
+    right: 20px;
+    z-index: 9999;">
+            <div class="whatsapp-track " style="text-align: center;">
+                <a href="https://wa.me/51914430086" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

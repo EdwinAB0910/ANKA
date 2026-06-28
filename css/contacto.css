@@ -289,16 +289,11 @@ main {
         white-space: nowrap;
     }
 
-    /* FOOTER */
     .footer {
         flex-direction: column;
         text-align: center;
         gap: 15px;
         padding: 20px;
-    }
-
-    .footer-contenedor {
-        gap: 10px;
     }
 
     /* REDES */
